@@ -1,0 +1,66 @@
+
+@startuml sequence
+scale 900 width
+'autonumber
+== Simple Stuff ==
+actor Alice
+actor Bob
+Alice -> Bob : Hello
+Bob -> Long as "This\nis\nvery\nlong"
+Long --> Bob : ok
+== Special Recipients ==
+boundary Boundary
+control "Control\nProcess"
+entity Entity
+database Database
+Alice -> Boundary : To boundary
+Alice -> Bob : To control
+Alice -> Entity : To entity
+Alice -> Database : To database
+== Self-Message ==
+Alice->Alice: This is a \nsignal to self.\nIt also\ndemonstrates\nmultiline \ntext
+== Styled Arrows ==
+Bob -> Alice
+Bob ->> Alice
+Bob -\ Alice
+Bob \\- Alice
+Bob //-- Alice
+Bob ->o Alice
+Bob o\\-- Alice
+Bob <-> Alice
+Bob <->o Alice
+== Lifetimes ==
+Alice -> Boundary: DoWork
+activate Boundary #FFBBBB
+Entity -> Boundary: Internal call
+activate Boundary #DarkSalmon
+Entity -> Entity: << createRequest >>
+activate Entity
+Entity --> Boundary: RequestCreated
+deactivate Entity
+deactivate Boundary
+Boundary -> Alice : Done
+deactivate Boundary
+== Alternatives and Loops ==
+alt successful case
+    Bob -> Alice: Authentication\nAccepted
+else some kind of failure
+    Bob -> Alice: Authentication\nFailure
+    group My own label
+    	Alice -> Log : Log attack start
+        loop 1000 times
+            Alice -> Bob: DNS Attack
+        end
+    	Alice -> Log : Log attack end
+    end
+else Another type of failure
+   Bob -> Alice: Please repeat
+end
+== Colored ==
+Bob -[#red]> Alice : hello
+Alice -[#0000FF]->Bob : ok
+== Colored with Custom Numbering ==
+autonumber 40 2 "<font color=red size=6><b>Message 0 "
+Bob -> Alice : Request
+Bob <- Alice : Response
+@enduml

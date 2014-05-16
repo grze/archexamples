@@ -1,0 +1,156 @@
+=== agenda ===
+Objective: Examine, understand, and potentially revise
+  how the proposed architectural practices are done
+  what it is they produce
+  why and when they deliver value
+  where other stakeholders are served along the way
+
+1. Ramble for a bit...
+2. Review what sp0 objective is
+3. Expand example drawn from 4.1
+*  Defer topics of how tasks are track and where artifacts go; focus on what & why
+* Tuesday:
+  - Revisit any identified changes
+  - task tracking
+  - artifact management.
+  - first iteration for 4.1.
+
+=== grze's notes ===
+
+== preramble ==
+- Single minded statement of purpose:
+  Models and documents must have a focused and easily articulated purpose.
+
+- Evolving level of detail:
+  Put decisions off as long as possible,
+  identify those deferments,
+  and track them.
+  Detail architecture just-in-time.
+  If we can't agree on outline then any other detail is useless.
+
+- Fast iteration:
+  As requirements, understanding, and demands of reality change revise the architecture stack from top-down.
+  Iteration and incremental expansion is not a justification for sloppiness.
+
+- Working software implementation is primary goal:
+  Models and documents are a tool to enable.
+
+- Accept that some architectural decisions are already made:
+  If it doesn't work in the system it is useless.
+
+- Prove it with code:
+  Use service mocks and integration tests to bound and define
+  Always have an eye on sprint boundaries.
+
+- Content is more important than representation:
+  artifacts are not a documentation system.
+
+- Work with future change in mind:
+  Be ready to revise working set
+  Remove spurious artifacts from the working set which is maintained over the release.
+
+- Focus on identify problems and solution space, not implementing solutions:
+  Writing the feature is where most of the work goes into the code, most of the thought goes into organizing that work.
+
+=== Example ===
+== overview of sp0 ==
+- outline feature
+- outline architecture
+- elaborate architecture & design
+- arrive at functional and architectural patient zero
+
+== 4.1 list ==
+https://eucalyptus.atlassian.net/issues/?filter=19000
+
+= today's example =
+PRD-215 Policies at CPUs / RAM granularity
+PRD-200 Support for priority on Instances
+PRD-199 Ability to Manage Resource Pools
+
+== sp0 ==
+
+ = week1 =
+  - User Story and Use Case comprehension and refinement
+  - Initial architectural analysis (iterated daily)
+  #1 Structural Elements and Interactions
+    - Use case diagram: What are the things that get done to the system
+    - Component diagram: What are the things and their relationships to one another
+  #2 Distributed Workflows and Inter-Element Coordination
+    - Component diagram: What are the outward facing interactions, interfaces, and
+    -
+  #3 Abstractions and Intra-Element Behaviours
+  #4 Architectural Skeleton
+    - Component diagram: What are the services and their operations, libraries and their APIs?
+    - Deployment diagram: Where
+    - Component Collaboration diagram:  What interacts with what for what purpose using what mechanism?
+  #5 Distributed Workflows and Element APIs
+    - Component/Sequence diagrams
+
+ = week2 =
+  - Ongoing architectural analysis (iterated daily)
+  - Initial engineering design and investigation
+
+ = week3 =
+  - Preliminary architecture completed
+  - Preliminary engineering design and investigation completed
+
+== end of sp0 ==
+- Architecture and design sufficient for:
+  - release planning
+  - dependency scheduling
+  - integration review and testing
+  - mocking operations
+  - tracer development in sp1
+- Prune artifacts
+  - identify the working set of docs & models
+  - these are maintained over the release's development
+
+== sp1 ==
+- Development of feature tracer
+
+== end of sp1 ==
+- Integration Review
+- Other Stakeholders Kick-in:
+-- Quality Attributes: UX, Security, Performance, Availability, etc.
+-- Tools: client tools.
+-- Testing: Functional (QA), Integration (Architecture Team), Component (Scrum Team), and Unit (Developer).
+-- Documentation: User stories and use cases (system & user).
+-- Sustaining: Architecture of feature, implementation boundaries, and internal behaviours.
+
+== beyond ==
+- change cases:  when a change to the architecture is made as the implementation matures
+- weekly digest consist of problem review, presentation of analysis, and adoption of needed changes
+- end of sprint reviews/updates
+
+=== extra references ===
+== relevant artifacts ==
+- Acceptance test
+- Change case
+- User stories
+- domain model
+- security threat model
+- essential user interface prototype
+- Diagrams:
+  - data flow
+  - activity
+  - communication
+  - component
+  - diagram
+  - state
+  - sequence
+  - network
+  - deployment
+  - logical/physical data
+
+http://plantuml.sourceforge.net/sequence.html
+http://plantuml.sourceforge.net/usecase.html
+http://plantuml.sourceforge.net/classes.html
+http://plantuml.sourceforge.net/activity.html
+http://plantuml.sourceforge.net/component.html
+http://plantuml.sourceforge.net/state.html
+http://plantuml.sourceforge.net/objects.html
+http://plantuml.sourceforge.net/salt.html
+https://github.com/jadler-mocking/jadler/wiki
+http://wiremock.org/
+https://github.com/clafonta/Mockey
+http://www.soapui.org/Service-Mocking/mocking-soap-services.html
