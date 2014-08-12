@@ -1,0 +1,19 @@
+@startuml usecase
+:Cloud Admin: as Admin
+(Set quotas using RAM/CPU/DISK) as (setpolicy)
+(Use System subject to policy) as (Use System)
+
+Admin -> (setpolicy)
+User --> (Use System)
+Admin ---> (Use System)
+@enduml
+
+
+@startuml elements
+User "0..*" -- "1..*" Policy
+Admin --o User
+(User,Policy) . Quota
+Instance "1..1" -- "0..*" InstanceType
+Quota "1..1" -- "0..*" InstanceType
+(Quota,InstanceType) . StatementAboutInstanceTypes
+@enduml

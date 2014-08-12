@@ -2,32 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b84bfd57-a26f-4e62-a716-ecc251352e22" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/arch-67/arch-67-use-case-admin.inc.puml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/arch-67/arch-67-use-case-user-1.inc.puml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/arch-67/arch-67-use-case-user-2.inc.puml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overview/arch-issue-types.puml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/4.0/autoscaling/component.puml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trace/cwflow.puml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/decker.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/4.0/autoscaling/deployment.puml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/elements-associations-arrows.puml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/arch-67/elements.puml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overview/euca-issue-types.puml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overview/issue-types.puml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trace/openiconic-reference.puml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overview/prd-issue-types.puml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/4.0/autoscaling/sequence.puml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/arch-67/skeleton.puml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trace/skinparam.inc.puml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overview/timeline.dot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trace/tracer-example.puml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nsn-scale/workflow.puml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/arch-67/workflows.puml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/arch-notes.txt" afterPath="$PROJECT_DIR$/arch-notes.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/elements-associations.puml" afterPath="$PROJECT_DIR$/examples/elements-associations.puml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="arch-diagram-examples.iws" />
@@ -655,8 +629,13 @@
       <workItem from="1404158151546" duration="592000" />
       <workItem from="1406161190124" duration="623000" />
       <workItem from="1407489460301" duration="1896000" />
-      <workItem from="1407492044252" duration="3195000" />
+      <workItem from="1407492044252" duration="3222000" />
     </task>
+    <task id="LOCAL-00001" summary="asdsad">
+      <created>1407825746754</created>
+      <updated>1407825746754</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers>
       <JIRA shared="true" url="https://eucalyptus.atlassian.net">
         <option name="apiType" value="REST_2_0" />
@@ -672,7 +651,7 @@
     </servers>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82897000" />
+    <option name="totallyTimeSpent" value="82924000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -710,6 +689,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24884437" sideWeight="0.35353535" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="SvgViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6503021" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.61445785" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3253012" sideWeight="0.5" order="32" side_tool="false" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3265625" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5438067" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" x="284" y="32" width="576" height="768" />
@@ -735,7 +715,6 @@
       <window_info id="TaskBrowser" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32842416" sideWeight="0.6704362" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="31" side_tool="false" content_ui="tabs" />
       <window_info id="Plugins" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.4969697" order="29" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3253012" sideWeight="0.5" order="32" side_tool="false" content_ui="tabs" />
       <window_info id="Code Review" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852563" sideWeight="0.5" order="28" side_tool="false" content_ui="tabs" />
       <window_info id="Analysis" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
@@ -777,6 +756,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="asdsad" />
+    <option name="LAST_COMMIT_MESSAGE" value="asdsad" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

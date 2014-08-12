@@ -1,0 +1,15 @@
+@startuml usecase
+:Cloud Admin: as Admin
+Admin -> (Manage Resource Pools)
+Admin -> (Update Resource Pools)
+Admin -> (Monitor)
+User -> (Use Resource Pools)
+@enduml
+
+@startuml elements
+Account "0..*" -- "1..*" CapacityReservation
+(Account,CapacityReservation) . ResourcePool
+ResourcePool "0..*" -- "1..*" CapacityPool
+Node "1..1" -- "0..*" CapacityPool
+Node "0..*" -- "1..1" Instance
+@enduml

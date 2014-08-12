@@ -1,0 +1,28 @@
+@startuml
+'From PRD-219 https://eucalyptus.atlassian.net/browse/PRD-219
+'
+' USER
+'
+frame user {
+  :Cloud User: as user
+
+  (Perform Operation) as (op)
+  (React to Region Outage) as (failover)
+
+  user -d-> (op)
+  user -r-> (failover)
+  note "Switch endpoint." as SWITCH
+  (failover) .. SWITCH
+  SWITCH ..> (op)
+}
+
+'
+' ADMIN
+'
+frame admin {
+  :Cloud Admin: as admin
+  (Configure Region\nin Federation) as (config)
+
+  admin -d-> (config)
+}
+@enduml
