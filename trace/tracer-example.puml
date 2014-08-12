@@ -1,0 +1,156 @@
+ @startuml
+''' MACROS (always first)
+!define deps(x) component "Service\n\#x"
+
+''' TITLE
+title Architecture Tracing
+
+''' STRUCTURE (diagram layout happens first)
+cloud Users {
+  actor User
+  component euca2ools <<Exists>>
+  component "User Console" as console <<Exists>>
+  User ~~ euca2ools
+  User ~~ console
+}
+frame region {
+''' INTERFACE elements are a stupid bug and have to be defined here.
+  () "API #1" as apione <<NEW>>
+  () "API #N" as apitwo <<NEW>>
+  note "Implements" as implements
+  component mine
+  () "\#1" as api1 <<Exists>>
+  () "\#2" as api2 <<Exists>>
+  () "\#3" as api3
+  deps(1) as s1
+  deps(2) as s2
+  deps(3) as s3
+  actor depends
+  actor dependstwo
+  actor dependsthree
+  frame zone {
+    () "\#4" as api4
+    deps(4) as s4
+    frame host {
+      () "\#5" as api5
+      deps(5) as s5
+    }
+  }
+}
+
+''' COMPONENT DEFINITIONS
+actor "User" as User
+actor "<color:red>Existing</color>\n\
+       <color:red>Dependency</color>" \
+       as depends <<Exists>>
+actor "<color:red>Another</color>\n\
+       <color:red>Dependency</color>" \
+       as dependstwo <<Exists>>
+actor "<color:red>New</color>\n\
+       <color:red>Dependency</color>" \
+       as dependsthree <<Depends>> <<NEW>>
+component "New Service" as mine <<NEW>>
+
+
+''' ARROWS
+note "User Story #1" as N1
+euca2ools -d- N1
+console -d- N1
+N1 =[#red]=> apione
+note "User Story #N" as N2
+N2 ~[#red]~> apitwo
+N1 ~r~ N2 : Stories...
+
+depends =u=> api1
+dependstwo =u=> api2
+dependsthree => apione
+
+implements ~l~> apione
+implements ~r~> apitwo
+implements ~~ mine
+
+
+
+mine =u= apione
+mine =u= apitwo
+
+mine =[#red]=> api1
+mine =right=> api2
+s2 =[#red]=> api3
+s3 =[#red]=> api4
+s4 =[#red]=>api5
+s5 =[#red]=>api2
+
+s5 = api5
+s1 = api1
+s2 = api2
+s3 = api3
+s4 = api4
+
+''' STYLE
+scale 800*1024
+skinparam default {
+  FontName Arial
+'  FontName Dialog
+'  FontName DialogInput
+'  FontName "Courier New"
+'  FontName "Courier New"
+'  FontName Inconsolata
+'  FontName "URW Gothic L"
+'  FontName
+  FontStyle plain
+  FontSize 14
+}
+skinparam note {
+  FontStyle bold
+  FontSize 11
+}
+skinparam titleFontSize 48
+skinparam componentArrow {
+  Color black
+}
+skinparam interface {
+  BorderColor black
+  BackgroundColor red
+}
+skinparam note {
+  BorderColor #red
+  BackgroundColor #white
+}
+skinparam actor {
+  BorderColor black
+  BackgroundColor white
+  BackgroundColor<<Depends>> red
+  BackgroundColor<<Exists>> orange
+  FontStyle<<Depends>> italic
+  StereotypeFontSize 11
+  StereotypeFontColor red
+  StereotypeFontColor<<Exists>> orange
+}
+skinparam interface {
+  BorderColor black
+  BackgroundColor yellow
+  BackgroundColor<<Depends>> red
+  BackgroundColor<<Exists>> orange
+  BackgroundColor<<NEW>> green
+  FontStyle bold
+  FontStyle<<Depends>> italic
+  StereotypeFontSize 11
+  StereotypeFontColor red
+  StereotypeFontColor<<Exists>> orange
+  StereotypeFontColor<<NEW>> green
+}
+skinparam component {
+  FontStyle bold
+  BorderColor black
+  BackgroundColor white
+  BackgroundColor<<Used>> red
+  ArrowFontSize 11
+  ArrowFontStyle italic
+  StereotypeFontSize 11
+  StereotypeFontColor black
+  StereotypeFontColor<<Depends>> red
+  StereotypeFontColor<<Exists>> orange
+  StereotypeFontColor<<New>> green
+}
+@enduml

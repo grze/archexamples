@@ -1,0 +1,39 @@
+@startuml
+  package JustIdentityThings {
+    class IdentityProvider
+    interface Authentication
+    class User
+    class Group
+    class Policy
+    IdentityProvider -- Authentication
+    (Group,User) . Membership
+    (User,Policy) . Authorization
+    (Group,Policy) . Authorization
+    IdentityProvider --* User
+    IdentityProvider --* Group
+  }
+  package JustServiceyThings {
+    class SomeService
+    interface SomeOperation
+    SomeService -- SomeOperation
+  }
+  package JustFederationyThings {
+    class Region
+    class FederatedRegion
+    class RelyingParty
+    class Federation
+    (Federation,FederatedRegion) . Member
+    Region --|> FederatedRegion
+    RemoteRegion ---|> FederatedRegion
+    (RemoteRegion,FederatedRegion) . RelyingParty
+  }
+  (SomeOperation,Authentication) . Authenticates
+  (Region,IdentityProvider) . Runs
+  (FederatedRegion,IdentityProvider) . TrustedIdentityProvider
+
+
+
+  'left to right direction
+  hide members
+  hide fields
+@enduml

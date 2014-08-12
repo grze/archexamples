@@ -1,0 +1,52 @@
+@startuml
+'left to right direction
+'scale 768 height
+'scale 1366 width
+
+title "PRD"
+skinparam class {
+  BackgroundColor White
+}
+skinparam classBackgroundColor<<Change Case>> #CCDDFF
+skinparam classBackgroundColor<<Tracer>> #FFDDCC
+skinparam classBackgroundColor<<Architecture Subtask>> #FFDDCC
+skinparam classBackgroundColor<<Test Case>> #FFDDCC
+skinparam defaultFontSize 12
+
+package "PRD Project" <<Frame>> {
+  class "Feature" as prdepic << (P,#BB88BB) Epic >>
+  class "User Story" as userstory << (P,#BB88BB) Story >>
+  enum "Feature's\nFunctional\nRequirements" as prdreq << (P,#BB88BB) Filter >>
+  (prdepic,userstory) ..o prdreq : aggregation
+}
+
+
+package "ARCH Project" <<Frame>> {
+  class "Feature Design & Specification" as arch << (A,#4488BB) Architecture >>
+}
+
+package "EUCA Project" <<Frame>> {
+  class "Dev. Team Story" as devstory << (E,#22AA22) Story >>
+  class "Functional\nAcceptance\nTest Case" as prdtest << (P,#BB88BB) Test Case >>
+}
+
+
+' arch work
+prdepic "1" -- "*" arch : input to >
+' prds to user stories
+userstory "1" *-- "*" userstory : sub stories >
+
+' Development Sprint & Planning
+prdepic "1" *- "*" userstory : composed of >
+prdreq o. devstory : contributes to <
+prdtest --> devstory : def. done >
+
+legend right
+  <font color="#BB88BB">Product Management</font>
+  <font color="#4488BB">Architecture</font>
+  <font color="#22AA22">Development</font>
+endlegend
+hide methods
+hide fields
+
+@enduml

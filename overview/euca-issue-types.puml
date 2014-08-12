@@ -1,0 +1,53 @@
+@startuml
+'left to right direction
+'scale 768 height
+'scale 1366 width
+
+title "EUCA, et al."
+skinparam class {
+  BackgroundColor White
+}
+skinparam classBackgroundColor<<Change Case>> #CCDDFF
+skinparam classBackgroundColor<<Tracer>> #FFDDCC
+skinparam classBackgroundColor<<Architecture Subtask>> #FFDDCC
+skinparam classBackgroundColor<<Test Case>> #FFDDCC
+skinparam defaultFontSize 12
+
+package "EUCA Project" <<Frame>> {
+  class "Dev. Team Story" as devstory << (E,#22AA22) Story >>
+  class "Functional\nAcceptance\nTest Case" as prdtest << (P,#BB88BB) Test Case >>
+  class "Development Task" as devtask << (E,#22AA22) Task>>
+  class "Architecture Requirement" as archsubtask << (A,#4488BB) Architecture Subtask >>
+  class "Sprint #1 Tracer" as archtracer << (A,#4488BB) Tracer >>
+
+}
+package "ARCH Project" <<Frame>> {
+  class "Architecture\nAcceptance\nTest Case" as archtest << (A,#4488BB) Test Case >>
+}
+package "PRD Project" <<Frame>> {
+  class "Feature" as prdepic << (P,#BB88BB) Epic >>
+  enum "Feature's\nFunctional\nRequirements" as prdreq << (P,#BB88BB) Filter >>
+}
+
+' Development Sprint & Planning
+prdepic "1" *--> "*" devstory : composed of >
+devtask *--> devstory   : completed by <
+prdtest --> devstory : def. done >
+prdreq *--> prdtest : verifies <
+archtracer "1" o-> "*" prdtest
+archtracer "1" o-> "*" archtest
+
+' Continued evaluation throughout development
+archsubtask "1" --> "1" devstory : def. done <
+archtest --> archsubtask : def. done >
+
+
+legend right
+  <font color="#BB88BB">Product Management</font>
+  <font color="#4488BB">Architecture</font>
+  <font color="#22AA22">Development</font>
+endlegend
+hide methods
+hide fields
+
+@enduml

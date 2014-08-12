@@ -1,0 +1,17 @@
+@startuml
+actor EC2Service
+actor user
+interface PutMetricData
+boundary DataQueue
+control QueueWorker
+database Database
+
+
+EC2Service --> PutMetricData : Put Instance Metrics
+user --> PutMetricData : Put Data
+
+PutMetricData --> DataQueue : Post Data for Processing
+
+DataQueue --> QueueWorker : Periodic Drain of Data
+QueueWorker --> Database : Store Processed Metrics
+@enduml

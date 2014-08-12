@@ -15,6 +15,37 @@ Objective: Examine, understand, and potentially revise
   - artifact management.
   - first iteration for 4.1.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 === grze's notes ===
 
 == preramble ==
@@ -76,7 +107,7 @@ PRD-199 Ability to Manage Resource Pools
     - Use case diagram: What are the things that get done to the system
     - Component diagram: What are the things and their relationships to one another
   #2 Distributed Workflows and Inter-Element Coordination
-    - Component diagram: What are the outward facing interactions, interfaces, and
+    - Component diagram: What are the outward facing interactions, interfaces, and ... what jenny needs.
     -
   #3 Abstractions and Intra-Element Behaviours
   #4 Architectural Skeleton
@@ -112,7 +143,8 @@ PRD-199 Ability to Manage Resource Pools
 - Integration Review
 - Other Stakeholders Kick-in:
 -- Quality Attributes: UX, Security, Performance, Availability, etc.
--- Tools: client tools.
+-- Tools: client tools, operator tools, possibly others as needed.
+-- Packaging: 3rd party dependencies (additions, updates, removals)
 -- Testing: Functional (QA), Integration (Architecture Team), Component (Scrum Team), and Unit (Developer).
 -- Documentation: User stories and use cases (system & user).
 -- Sustaining: Architecture of feature, implementation boundaries, and internal behaviours.

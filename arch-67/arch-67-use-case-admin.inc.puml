@@ -1,0 +1,12 @@
+@startuml
+'For: ARCH-67 https://eucalyptus.atlassian.net/browse/ARCH-67
+'From: PRD-219 https://eucalyptus.atlassian.net/browse/PRD-219
+
+title ARCH-67's Admin Use cases from PRD-219
+
+:Cloud Admin: as admin
+(Configure Region\nin Federation) as (config)
+
+
+admin -d-> (config)
+@enduml

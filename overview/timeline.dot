@@ -1,0 +1,21 @@
+digraph  {
+ mindist=0;
+ ranksep=0;
+ nodesep=0;
+
+ node[shape=box,margin="0,0",width=1, height=0.5];
+ edge [style=invis];
+
+ Legend[width=2];
+ Legend -> Foo;
+ Legend -> FooValue;
+ Foo -> Bar;
+ FooValue -> BarValue
+ Bar -> Baz;
+ BarValue -> BazValue;
+
+ edge [constraint=false];
+ Foo -> FooValue;
+ Bar -> BarValue
+ Baz -> BazValue;
+ }

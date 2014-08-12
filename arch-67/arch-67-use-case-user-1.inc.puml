@@ -1,0 +1,14 @@
+@startuml
+  title User ARCH-67's Use cases from PRD-219
+:Cloud User: as user
+
+(Perform Operation) as (op)
+(React to Region Outage) as (failover)
+
+user -d-> op
+user -r-> failover
+
+note "Switch endpoint." as SWITCH
+failover .. SWITCH
+SWITCH ..> op
+@enduml

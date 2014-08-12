@@ -1,0 +1,9 @@
+skinparam monochrome true
+skinparam title {
+  FontSize 20
+}
+skinparam default {
+  FontName Monospaced
+  FontSize 12
+  FontStyle bold
+}

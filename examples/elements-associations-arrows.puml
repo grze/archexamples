@@ -1,0 +1,52 @@
+@startuml associations
+scale 768 height
+scale 1366 width
+skinparam defaultFontSize 8
+skinparam class {
+	BackgroundColor<<(W,White) Stereotype>> #FFDDFF
+}
+'left to right direction
+title: left to right direction
+
+package Arrows {
+  A --() API : Provides --()
+  A --* B : Contains --*
+  A <--o C : Aggregates o--> >
+  A -r-+ D << (D,red) D >> : Member --+
+  class "superclass" as na
+  A <<Stereotype>> -l-|> na : Specializes --|>
+}
+
+package "Rect, Node, Frame, Package, Database, Cloud" as Classes <<Rect>> {
+  class Aggregator<? extends E>
+  enum Enum<Generic>
+  class "Fields & Methods" as fandm << (W,white) Stereotype >> {
+    {abstract} <<(W,White) Stereotype>>
+    __
+    --private
+    __ underscore*2 __
+    #\#protected
+    == equal*2 ==
+    ~~package private
+    .. dot*2 ..
+    ++public
+    -- dash*2 --
+    --private()
+    ++{static} static()
+    --{static}{abstract} staticAbstract()
+  }
+  interface Interface <|- fandm : implements
+  fandm --o Aggregator : o- aggregates >
+  fandm --* Enum : -* contains >
+  annotation Annotation <. fandm : annotated
+  note left of Aggregator: note top of\nAggregator
+  (fandm,Annotation) --  Association : explanation
+
+
+}
+legend left
+  legend left...endlegend
+endlegend
+
+
+@enduml

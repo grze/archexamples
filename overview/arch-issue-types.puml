@@ -1,0 +1,60 @@
+@startuml
+'left to right direction
+'scale 768 height
+'scale 1366 width
+
+title "ARCH"
+skinparam class {
+  BackgroundColor White
+}
+skinparam classBackgroundColor<<Change Case>> #CCDDFF
+skinparam classBackgroundColor<<Tracer>> #FFDDCC
+skinparam classBackgroundColor<<Architecture Subtask>> #FFDDCC
+skinparam classBackgroundColor<<Test Case>> #FFDDCC
+skinparam defaultFontSize 12
+
+package "ARCH Project" <<Frame>> {
+  class "Feature Design & Specification" as arch << (A,#4488BB) Architecture >>
+  class "Technical\nAnalysis & Evaluation" as sysarch << (A,#4488BB) System Architecture >>
+  class "Architecture\nChange/Improvement" as changecase << (A,#4488BB) Change Case >>
+  class "Architecture\nAcceptance\nTest Case" as archtest << (A,#4488BB) Test Case >>
+}
+
+package "EUCA Project" <<Frame>> {
+  class "Technical Investigation" as archspike << (A,#4488BB) Spike >>
+  class "Architecture Requirement" as archsubtask << (A,#4488BB) Architecture Subtask >>
+  class "Sprint #1 Tracer" as archtracer << (A,#4488BB) Tracer >>
+  class "Development Task" as devtask << (E,#22AA22) Task>>
+}
+
+' arch work
+arch --> arch : refinement >
+sysarch -- arch : calls for <
+changecase ..> sysarch : becomes >
+
+' Development Sprint & Planning
+archspike *--> devtask : completed by <
+
+
+' Sprint #1 Tracer
+arch "1" --> "*" archspike : calls for >
+sysarch "1" --> "*" archspike : calls for >
+arch *--> archtracer : defines >
+archtracer "1" o-> "*" devtask
+archtracer "1" o-> "*" archtest
+archtracer .. archsubtask : arch. runway <
+
+' Continued evaluation throughout development
+archsubtask "1" --> "1" devtask : def. done <
+archtest --> archsubtask : def. done >
+
+
+legend right
+  <font color="#BB88BB">Product Management</font>
+  <font color="#4488BB">Architecture</font>
+  <font color="#22AA22">Development</font>
+endlegend
+hide methods
+hide fields
+
+@enduml

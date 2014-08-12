@@ -18,5 +18,16 @@
       <PyConsoleSettings />
     </option>
   </component>
+  <component name="TL_PLUGIN">
+    <option name="myModel">
+      <IssueLinkModel />
+    </option>
+    <option name="myCheckinOptions">
+      <CheckinOptions />
+    </option>
+  </component>
+  <component name="TaskProjectConfiguration">
+    <server type="JIRA" url="https://eucalyptus.atlassian.net" />
+  </component>
 </project>
 

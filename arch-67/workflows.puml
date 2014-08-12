@@ -1,0 +1,41 @@
+@startuml
+[*] --> SetupCloud
+SetupCloud -> DoTest : TEST!
+DoTest --> ScaleUpCloud : Test\nPassed
+ScaleUpCloud --> SetupCloud : Next\nSize
+DoTest --> [*] : Out of\ntime
+
+
+SetupCloud : * Deploy Cloud
+SetupCloud : * Start Cloud
+SetupCloud : * Prepare Cloud
+SetupCloud : * Prime Cloud
+
+DoTest : * Prime/Ramp-up Test
+DoTest : * Run Test
+DoTest -> DoTest : Parameter\nSweep
+
+ScaleUpCloud : * Change Topology
+ScaleUpCloud : * Update Configuration
+ScaleUpCloud : * Verify
+
+DoTest --> IdentifyIssue : Test\nFailed
+IdentifyIssue -down-> WorkaroundIssue : Think\nHard
+WorkaroundIssue -right-> DeployWorkaround : Magic
+DeployWorkaround -up-> SetupCloud : Try\nFix
+ScaleUpCloud --> [*] : Maximum\nScale
+
+IdentifyIssue : * Collect logs
+IdentifyIssue : * Gather system state
+IdentifyIssue : * Record for bug filing
+IdentifyIssue : * Reproduce issue
+IdentifyIssue : * Clean up cloud
+
+WorkaroundIssue : * Investigate
+WorkaroundIssue : * Create Fix
+WorkaroundIssue : * Build Fix
+
+DeployWorkaround : * CommitFix
+DeployWorkaround : * Roll Packages
+DeployWorkaround : * Upgrade Packages
+@enduml

@@ -1,0 +1,40 @@
+@startuml
+title http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html
+frame ELB {
+  interface RegisterInstance
+}
+frame AutoScaling {
+  component ASG
+  component Tags
+  component ASProcess
+  component ASActivity
+  component Launch
+  component Terminate
+  component AddToLoadBalancer
+  component AlarmNotification
+  component AZRebalance
+  component HealthCheck
+  component ReplaceUnhealthy
+  component ScheduledActions
+  Launch -|> ASProcess
+  Terminate -|> ASProcess
+  AddToLoadBalancer --|> ASProcess
+  AlarmNotification --|> ASProcess
+  AZRebalance  --|> ASProcess
+  HealthCheck --|> ASProcess
+  ReplaceUnhealthy  --|> ASProcess
+  ScheduledActions --|> ASProcess
+  ASProcess --* ASActivity : Does a bunch of
+  ASG --> Tags : has
+  ASProcess ..> ASG : acts on
+}
+frame Compute {
+  interface DescribeInstances
+  interface RunInstances
+  interface TerminateInstances
+}
+ASActivity -> DescribeInstances
+ASActivity -> TerminateInstances
+ASActivity -> RunInstances
+ASActivity -> RegisterInstance
+@enduml

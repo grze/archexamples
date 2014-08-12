@@ -1,5 +1,7 @@
 @startuml associations
 left to right direction
+
+
 class Student
 class Course
 abstract class AbstractList

@@ -1,0 +1,14 @@
+@startuml
+
+node UFS {
+  interface AutoScaling
+  interface Compute
+  interface ELB
+}
+node CLC {
+  database DB
+}
+AutoScaling ..> Compute
+AutoScaling ..> ELB
+AutoScaling --> DB
+@enduml

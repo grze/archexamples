@@ -1,0 +1,26 @@
+@startuml
+frame JustUserStuff {
+  actor User
+  component UserConsole
+  component euca2ools
+  User-->UserConsole
+  User-->euca2ools
+}
+() SomeOperation
+
+frame FederationStuff {
+  () SAML
+  () OAuth
+  () OpenId
+  () AccessSecretKey
+  component ShibbolethIdP
+  ShibbolethIdP == SAML
+  ShibbolethIdP =r= OAuth
+  ShibbolethIdP =d= OpenId
+  ShibbolethIdP =u= AccessSecretKey
+}
+euca2ools .d.> SomeOperation
+SomeOperation .d.> AccessSecretKey
+UserConsole .d.> OAuth
+
+@enduml
